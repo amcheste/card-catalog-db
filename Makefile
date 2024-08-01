@@ -1,4 +1,5 @@
 PROGRAM := card-catalog-db
+
 LABEL   := $(shell git rev-parse --abbrev-ref HEAD)
 
 .PHONY: all build run-docker create-vol clean-vol
@@ -15,7 +16,7 @@ remove-vol:
 	docker volume rm '$(PROGRAM)-vol' || true
 
 run-docker: create-vol
-	docker run -it --rm --net=host \
+	docker run -it --rm \
 		-e 'POSTGRES_PASSWORD=password' \
 		-e 'POSTGRES_USER=card-catalog' \
 		-e 'POSTGRES_DB=card-catalog' \

@@ -1,4 +1,6 @@
+
 CREATE TYPE status AS ENUM ('ACTIVE', 'DISABLED');
+
 
 -- Users Table
 CREATE TABLE users (
