@@ -1,4 +1,5 @@
-PROGRAM := forecaster-db
+PROGRAM := card-catalog-db
+
 LABEL   := $(shell git rev-parse --abbrev-ref HEAD)
 
 .PHONY: all build run-docker create-vol clean-vol
