@@ -15,8 +15,6 @@ CREATE TABLE users (
 );
 CREATE INDEX users_email_index ON users(email);
 
-SELECT * FROM users;
-
 CREATE TABLE user_passwords (
     id uuid PRIMARY KEY REFERENCES users(id),
     password character(97) NOT NULL, -- All argon2id hashes will be 97 chars in length using the settings we have
